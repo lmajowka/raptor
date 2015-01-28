@@ -1,0 +1,23 @@
+= simple_form_for @experiment do |f|
+  = f.error_notification
+  br
+  br
+
+  .field
+    = f.input :title
+  .field
+    = f.label :status
+    = f.select :status, ['draft','published']
+  .field
+    label Country
+    = render 'snippets/countries_dropdown'
+  .field
+    = f.label :published_until
+    = f.datetime_select :published_until, end_year: 2050
+
+  input type='checkbox' class='fl' onclick='Raptor.Lib.Experiment.publishForever(this)'
+  div class='fl ml10' Publish forever
+
+  div class='cb'
+
+  .actions = f.button :submit, class: 'btn btn-warning mt30'

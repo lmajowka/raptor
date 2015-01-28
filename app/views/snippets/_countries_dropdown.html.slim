@@ -1,0 +1,8 @@
+select name="experiment[country_code]" id="countries" style="width:300px;"
+  option value='all' data-image="/assets/icons/blank.gif" data-imagecss="" data-title="All" All
+  - Country::COUNTRIES_NAMES.each do |k,v|
+    option value='#{{k.downcase}}' data-image="/assets/icons/blank.gif" data-imagecss="flag #{{k.downcase}}" data-title="#{{v}}" #{{v}}
+javascript:
+  $(document).ready(function () {
+    $("#countries").msDropdown();
+  })

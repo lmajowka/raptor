@@ -12,5 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.dd
 //= require turbolinks
+//= require raptor
 //= require_tree .

@@ -1,0 +1,28 @@
+h1 Experiments
+
+table
+  thead
+    tr
+      th Title
+      th Status
+      th Published until
+      th Country
+      th
+      th
+      th
+
+  tbody
+    - @experiments.each do |experiment|
+      tr
+        td class="table_title" = link_to experiment.title, experiment
+        td class=experiment.status = experiment.status
+        td class=experiment.css_class = experiment.published_until.strftime('%d/%m/%Y %H:%M')
+        td
+          == render 'snippets/country_flag', country_code: experiment.country_code
+        td = link_to 'Edit', edit_experiment_path(experiment)
+        td = link_to 'Delete', experiment_path(experiment), method: :delete
+
+br
+
+
+= link_to 'New Experiment', new_experiment_path, class: "btn btn-success ml20"

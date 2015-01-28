@@ -1,0 +1,19 @@
+html
+  head
+    meta content="noindex, nofollow" name="robots"
+
+    = stylesheet_link_tag "application", media: "all"
+    = javascript_include_tag "application"
+
+  #header
+    div id='logo'
+      = link_to image_tag("raptor_logo.png"), root_path()
+    div class='logo'
+      = link_to 'Raptor ABTests 0.1', root_path()
+    div
+      = link_to 'Experiments', experiments_path()
+
+    div class='cb'
+
+  div id='wrapper'
+    = yield

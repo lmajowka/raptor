@@ -1,0 +1,26 @@
+p#notice = notice
+
+h1
+  = @experiment.title
+  - label_type = @experiment.status == "draft" ? "danger" : "success"
+p class="fl label label-#{{label_type}} mt3 fl"
+  = @experiment.status
+p class='fl ml20'
+  strong Published until:
+  p class='fl ml20' = @experiment.published_until.strftime('%d/%m/%Y %H:%M')
+
+= link_to 'Edit', edit_experiment_path(@experiment), class: 'fl ml20'
+
+div class='cb'
+  div class='fl'
+    | Running on
+  div class='fl ml10'
+    == render 'snippets/country_flag', country_code: @experiment.country_code
+
+br
+br
+
+div class='cb'
+
+br
+br
