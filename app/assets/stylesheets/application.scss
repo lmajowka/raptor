@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require bootstrap.min
+ *= require dragdealer
  *= require dd
  *= require flags
  *= require_tree .
@@ -20,7 +21,7 @@
 //  position: fixed;
   top:0;
   left:0;
-  height:106px;
+  height:55px;
   width:100%;
 }
 
@@ -103,4 +104,11 @@ abbr[title]{
 
 table td, table th{
   padding: 10px 20px;
+}
+
+.iframe-experiment iframe{
+  width: 100%;
+  position:absolute;
+  left:0;
+  height: 400px;
 }

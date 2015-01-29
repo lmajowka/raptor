@@ -14,5 +14,6 @@
 //= require jquery_ujs
 //= require jquery.dd
 //= require turbolinks
+//= require dragdealer.js
 //= require raptor
 //= require_tree .

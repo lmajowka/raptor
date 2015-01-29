@@ -1,15 +1,24 @@
 .cb{clear:both}
 .fl{float:left}
+.fr{float:right}
 .fwb{font-weight:bold}
 
 .ml10{margin-left:10px;}
 .ml20{margin-left:20px;}
 .ml50{margin-left:50px;}
 
+.mr20{margin-right:20px;}
+
 .mt3{margin-top:3px;}
 .mt5{margin-top:5px;}
+.mt10{margin-top:10px;}
 .mt20{margin-top:20px;}
 .mt30{margin-top:30px;}
+.mt70{margin-top:70px;}
 
 .gray-background{background:#F1F1F1}
 .yellow-background{background:#FADCA4}
+
+.fs12{font-size:12px;}
+
+.w100{width:100%}

@@ -7,7 +7,7 @@ table
       th Status
       th Published until
       th Country
-      th
+      th URL
       th
       th
 
@@ -19,6 +19,7 @@ table
         td class=experiment.css_class = experiment.published_until.strftime('%d/%m/%Y %H:%M')
         td
           == render 'snippets/country_flag', country_code: experiment.country_code
+        td = link_to experiment.url, experiment.url
         td = link_to 'Edit', edit_experiment_path(experiment)
         td = link_to 'Delete', experiment_path(experiment), method: :delete
 

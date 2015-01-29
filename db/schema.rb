@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150127201207) do
+ActiveRecord::Schema.define(version: 20150128194120) do
 
   create_table "experiments", force: true do |t|
     t.string   "title",                             null: false
@@ -20,6 +20,17 @@ ActiveRecord::Schema.define(version: 20150127201207) do
     t.string   "country_code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "url"
   end
+
+  create_table "variations", force: true do |t|
+    t.integer  "experiment_id",    null: false
+    t.string   "title",            null: false
+    t.string   "population_logic", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "variations", ["experiment_id"], name: "index_variations_on_experiment_id"
 
 end

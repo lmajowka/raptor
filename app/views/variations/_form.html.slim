@@ -1,0 +1,39 @@
+= simple_form_for(@variation) do |f|
+  = f.error_notification
+
+  .form-inputs
+    div style='display:none'
+      = f.association :experiment
+
+    div class='cb'
+
+    div class='mt20'
+      = f.input :title
+
+    = f.input :population_logic
+    div id="population-slider" class="dragdealer" style='width:679px;'
+      div class="handle red-bar"
+        span class='value'
+        | %
+
+  br
+  br
+
+  .form-actions
+    = f.button :submit, class: 'btn btn-warning'
+
+  javascript:
+
+    var d = new Dragdealer('population-slider', {
+      animationCallback: function (x, y) {
+        setup_fields(Math.round(x * 100));
+      }
+    });
+
+    d.setValue(#{{(Variation.get_percentual @variation.population_logic).to_f/100}});
+
+    function setup_fields(value) {
+      $('#population-slider .value').text(value);
+      $('#variation_population_logic').val(value);
+    }
+
