@@ -26,10 +26,10 @@ div class='fl' style='width:500px;'
   br
   br
 div class='fr' style='min-width:630px'
-  div
+  div class='mt30 fr mr20'
     = link_to 'New Variation', new_variation_path( variation: {experiment_id: @experiment.id}) , class: "btn btn-success ml20"
 
-  div class='mt70'
+  div class='mt100'
     - if @experiment.variations.any?
       | Variations:
     div
