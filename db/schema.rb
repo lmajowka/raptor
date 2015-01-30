@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150128194120) do
+ActiveRecord::Schema.define(version: 20150130104025) do
+
+  create_table "changes", force: true do |t|
+    t.integer  "variation_id", null: false
+    t.string   "selector",     null: false
+    t.string   "content"
+    t.string   "css_text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "changes", ["variation_id"], name: "index_changes_on_variation_id"
 
   create_table "experiments", force: true do |t|
     t.string   "title",                             null: false

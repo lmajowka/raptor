@@ -1,5 +1,6 @@
 class Variation < ActiveRecord::Base
   belongs_to :experiment
+  has_many :changes
 
   validate :valid_population_logic
   validates_presence_of :experiment, :title

@@ -1,0 +1,4 @@
+-@experiment.variations.each do |variation|
+  - variation.changes.each do |change|
+    div class="change-of-variation change-of-variation-#{{variation.id}}"
+      = change.selector

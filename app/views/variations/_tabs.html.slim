@@ -1,0 +1,15 @@
+- total_percent = 0
+- @experiment.variations.each do |variation|
+  - total_percent += Variation.get_percentual(variation.population_logic).to_i
+  div class='fl ml50 mt20 fs12'
+    div onclick='Raptor.Pages.Experiment.selectVariation(#{variation.id})' class='cp tab-variation' id="tab-variation-#{variation.id}"
+      = Variation.get_percentual variation.population_logic
+      | % -&nbsp;
+      = variation.title
+    div
+      = link_to 'Edit', edit_variation_path(variation), class: 'fl'
+      = link_to 'Delete', variation_path(variation), method: :delete , class:'fl ml20'
+div class='fr fs12 mr20 mt20'
+  = 100 - total_percent
+  | % -&nbsp;
+  | Control

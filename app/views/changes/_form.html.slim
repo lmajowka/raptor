@@ -1,0 +1,17 @@
+= simple_form_for(@change) do |f|
+  = f.error_notification
+
+  .form-inputs
+    div style='display:none'
+      = f.association :variation
+    div class='mt20'
+      = f.input :selector
+    div class='mt20'
+      = f.input :content
+    div class='mt20'
+      = f.input :css_text
+
+  br
+
+  .form-actions
+    = f.button :submit, class: "btn btn-warning"

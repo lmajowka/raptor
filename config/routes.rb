@@ -1,6 +1,7 @@
 Raptor::Application.routes.draw do
   resources :experiments
   resources :variations
+  resources :changes
 
   root :to => 'experiments#index'
 
