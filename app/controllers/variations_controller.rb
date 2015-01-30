@@ -2,16 +2,29 @@ class VariationsController < InheritedResources::Base
   before_action :authenticate
   before_action :reorganize, only: :update
   before_action :get_population_logic, only: [:create,:update]
+  skip_before_filter :verify_authenticity_token
 
   def permitted_params
     params.permit(:variation => [:title, :population_logic, :experiment_id])
   end
 
   def create
-    create!{redirect_to @variation.experiment and return}
+    create!{back_to_experiment and return}
+  end
+
+  def update
+    update!{back_to_experiment and return}
+  end
+
+  def destroy
+    destroy!{back_to_experiment and return}
   end
 
   private
+
+  def back_to_experiment
+    redirect_to @variation.experiment || @experiment
+  end
 
   def get_population_logic
     return unless params[:variation][:population_logic] and params[:variation][:experiment_id]

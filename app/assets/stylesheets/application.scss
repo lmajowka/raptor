@@ -106,9 +106,20 @@ table td, table th{
   padding: 10px 20px;
 }
 
-.iframe-experiment iframe{
+.iframe-experiment{
+  padding: 0px;
   width: 100%;
   position:absolute;
   left:0;
   height: 400px;
+  border-top: 1px solid #999;
+}
+
+.iframe-experiment iframe{
+  height: 700px;
+  width: 100%;
+  border:0;
+}
+.iframe-experiment td{
+  padding:0px;
 }

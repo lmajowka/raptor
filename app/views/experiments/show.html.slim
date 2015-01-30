@@ -37,9 +37,13 @@ div class='fr' style='min-width:630px'
       - @experiment.variations.each do |variation|
         - total_percent += Variation.get_percentual(variation.population_logic).to_i
         div class='fl ml50 mt20 fs12'
-          = Variation.get_percentual variation.population_logic
-          | % -&nbsp;
-          = variation.title
+          div
+            = Variation.get_percentual variation.population_logic
+            | % -&nbsp;
+            = variation.title
+          div
+            = link_to 'Edit', edit_variation_path(variation), class: 'fl'
+            = link_to 'Delete', variation_path(variation), method: :delete , class:'fl ml20'
       div class='fr fs12 mr20 mt20'
         = 100 - total_percent
         | % -&nbsp;
@@ -49,8 +53,13 @@ div class='fr' style='min-width:630px'
 
 div class='cb'
 
-div class='iframe-experiment'
-  iframe src="#{{@experiment.url}}"
-
+table class='iframe-experiment'
+  tr
+    td width='85%'
+      iframe src="#{{@experiment.url}}"
+    td valign='top'
+      div class='ml20 mt10'
+        | Changes
+      div class='btn btn-warning ml20 mt20' New Change
 br
 br
