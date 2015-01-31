@@ -1,0 +1,5 @@
+== render file: "app/assets/javascripts/raptor.coffee"
+== render file: "app/assets/javascripts/lib/test.coffee"
+== render file: "app/assets/javascripts/lib/runner.coffee"
+| Raptor.experiments = #{@jscode.html_safe};
+| new Raptor.Lib.Runner(Raptor.experiments || []).run();

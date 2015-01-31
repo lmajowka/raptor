@@ -6,4 +6,6 @@ Raptor::Application.routes.draw do
   root :to => 'experiments#index'
 
   match 'admin', to: 'experiments#index', via: 'get'
+  match 'js', to: 'index#index', via: 'get'
+
 end

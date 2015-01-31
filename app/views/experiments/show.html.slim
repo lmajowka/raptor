@@ -44,13 +44,14 @@ table class='iframe-experiment'
     td width='85%'
       iframe src="#{{@experiment.url}}"
     td valign='top'
-      div class='ml20 mt10'
-        | Changes
-      == render 'changes/index'
-      = link_to 'New Change', new_change_path( change: {variation_id: 0}) , class: 'btn btn-warning ml20 mt20', id: 'new-change'
+      - if @experiment.variations.any?
+        div class='ml20 mt10'
+          | Changes
+        == render 'changes/index'
+        = link_to 'New Change', new_change_path( change: {variation_id: 0}) , class: 'btn btn-warning ml20 mt20', id: 'new-change'
 br
 br
 
 javascript:
-  Raptor.Pages.Experiment.currentVariationId = #{{@experiment.variations.first.id}};
+  Raptor.Pages.Experiment.currentVariationId = #{{@experiment.variations.first.try(:id)}};
   Raptor.Pages.Experiment.initialize();

@@ -1,4 +1,9 @@
--@experiment.variations.each do |variation|
-  - variation.changes.each do |change|
-    div class="change-of-variation change-of-variation-#{{variation.id}}"
-      = change.selector
+div class='ml20 mt20 fs12'
+  -@experiment.variations.each do |variation|
+    - variation.changes.each do |change|
+      div class="change-of-variation change-of-variation-#{{variation.id}} mt10"
+        = change.selector
+        div class='ml20 gray'
+          = change.content
+        div class='ml20 gray'
+          = change.css_text
