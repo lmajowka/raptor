@@ -23,6 +23,7 @@ Which means you can use Raptor ABtests in your application regardless of your se
 3. Checking in development:
 
    In your website's head, place the tag
+
         <script src="http://localhost:3000/js.js"></script>
 
    The tests should start running
@@ -32,6 +33,7 @@ Which means you can use Raptor ABtests in your application regardless of your se
 1. Deploy your raptor application to a server ( I recommend heroku, it's a good place to start )
 
 2. in your website's head, use the tag with you raptor's app domain
+
         <script src="http://yourraptorappdomain.com/js.js"></script>
 
 3. Use the parameters  seedrafts and forceVersion to check that the experiment is well configured
