@@ -36,9 +36,9 @@ Which means you can use Raptor ABtests in your application regardless of your se
 
 3. Use the parameters  seedrafts and forceVersion to check that the experiment is well configured
 
-       http://yourraptorappdomain.com/my-landing-page?seedrafts&forceversion=6
+        http://yourraptorappdomain.com/my-landing-page?seedrafts&forceversion=6
 
 4. Change or experiment status to "published" and set up and end time. (Published until)
 
 ## Collecting Data
-     Coming up
+        Coming up
