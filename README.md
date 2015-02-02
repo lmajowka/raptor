@@ -20,7 +20,17 @@ Which means you can use Raptor ABtests in your application regardless of your se
 
    Play with experiments and versions
 
-3. Checking in development:
+3  Requirements:
+
+   Client side:
+
+        jQuery > 1.4
+
+   Server:
+
+        Rails, database no mystery
+
+4. Checking in development:
 
    In your website's head, place the tag
 

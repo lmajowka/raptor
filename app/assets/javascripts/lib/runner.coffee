@@ -12,19 +12,12 @@ class Raptor.Lib.Runner
 
   run: ->
     $.each @activeExperiments(), (key, experiment) =>
-      @applyDefault(experiment)
       $.each @relevantVariationsForPopulation(experiment) , (key,variation) =>
         $.each variation.changes, (key,change) =>
           clearInterval(@timer[change.selector+"Default"])
           @timer[change.selector] = setInterval @applyChange change, 200
     setTimeout ( => @timeOut() ) , 12000
 
-  applyDefault: (experiment) =>
-    $.each @relevantVariationsForPopulation(experiment) , (key,variation) =>
-      if variation.country_code == "Default"
-        $.each variation.changes, (key,change) =>
-          if location.href.match change.url_pattern
-            @timer[change.selector+"Default"] = setInterval @applyChange change, 200
 
   timeOut: =>
     for selector of @timer
@@ -45,9 +38,10 @@ class Raptor.Lib.Runner
 
   activeExperiments: ->
     @data.filter (experiment) =>
-      parseInt(experiment.published_until) >= new Date().getTime()  &&
-      ( experiment.status == "published" ||
-        ( @seeDrafts experiment ) )
+      parseInt(experiment.published_until) >= new Date().getTime() and
+      ( experiment.status == "published" or
+        ( @seeDrafts experiment ) ) and
+      experiment.url.match location.pathname
 
   seeDrafts: (experiment) ->
     experiment.status == "draft" && location.search.match /seedrafts/
