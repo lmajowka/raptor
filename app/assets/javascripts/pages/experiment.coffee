@@ -20,3 +20,6 @@ class Raptor.Pages.Experiment
     $('.tab-variation').removeClass('selected-variation')
     $("#tab-variation-#{@currentVariationId}").addClass('selected-variation')
 
+  @checkJSPresence: ->
+    if not raptorLoaded
+      alert "Javascript js.js not found"

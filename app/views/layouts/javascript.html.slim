@@ -3,3 +3,4 @@
 == render file: "app/assets/javascripts/lib/runner.coffee"
 | Raptor.experiments = #{@jscode.html_safe};
 | new Raptor.Lib.Runner(Raptor.experiments || []).run();
+| if (typeof(parent.raptorLoaded) != "undefined") parent.raptorLoaded = true

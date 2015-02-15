@@ -42,7 +42,7 @@ div class='cb'
 table class='iframe-experiment'
   tr
     td width='85%'
-      iframe src="#{{@experiment.url}}"
+      iframe src="#{{@experiment.url}}" onload="Raptor.Pages.Experiment.checkJSPresence()"
     td valign='top'
       - if @experiment.variations.any?
         div class='ml20 mt10'
@@ -53,5 +53,6 @@ br
 br
 
 javascript:
+  var raptorLoaded = false;
   Raptor.Pages.Experiment.currentVariationId = #{{@experiment.variations.first.try(:id)}};
   Raptor.Pages.Experiment.initialize();

@@ -2,8 +2,13 @@ div class='ml20 mt20 fs12'
   -@experiment.variations.each do |variation|
     - variation.changes.each do |change|
       div class="change-of-variation change-of-variation-#{{variation.id}} mt10"
-        = change.selector
-        div class='ml20 gray'
-          = change.content
-        div class='ml20 gray'
-          = change.css_text
+        b
+          = change.selector
+        - if change.content.size > 0
+          div class='ml20 gray'
+            span class='black' Content:&nbsp;
+            = change.content
+        - if change.css_text.size > 0
+          div class='ml20 gray'
+            span class='black' CSS Text:&nbsp;
+            = change.css_text
