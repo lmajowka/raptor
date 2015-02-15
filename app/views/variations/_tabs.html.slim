@@ -2,7 +2,7 @@
 - @experiment.variations.each do |variation|
   - total_percent += Variation.get_percentual(variation.population_logic).to_i
   div class='fl ml50 mt20 fs12'
-    div onclick='Raptor.Pages.Experiment.selectVariation(#{variation.id})' class='cp tab-variation' id="tab-variation-#{variation.id}"
+    div onclick='Raptor.Pages.Experiment.selectVariation(#{variation.id},#{total_percent})' class='cp tab-variation' id="tab-variation-#{variation.id}"
       = Variation.get_percentual variation.population_logic
       | % -&nbsp;
       = variation.title

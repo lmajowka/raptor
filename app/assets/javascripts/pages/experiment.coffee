@@ -5,11 +5,11 @@ class Raptor.Pages.Experiment
     @updateChangesPanel()
     @updateVariationTabs()
 
-  @selectVariation: (variationId) ->
+  @selectVariation: (variationId, percent) ->
     @currentVariationId = variationId
     @updateChangesPanel()
     @updateVariationTabs()
-
+    @updateIframe(percent)
 
   @updateChangesPanel: ->
     $('#new-change')[0].href = $('#new-change')[0].href.replace(/\=[0-9]+/,"=#{@currentVariationId}")
@@ -23,3 +23,6 @@ class Raptor.Pages.Experiment
   @checkJSPresence: ->
     if not raptorLoaded
       alert "Javascript js.js not found"
+
+  @updateIframe: (percent) ->
+    $('iframe')[0].src = $('iframe')[0].src.replace(/\=([0-9]+)/g,"=#{(percent - 1)}")
