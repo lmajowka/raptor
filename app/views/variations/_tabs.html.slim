@@ -9,7 +9,7 @@
     div
       = link_to 'Edit', edit_variation_path(variation), class: 'fl'
       = link_to 'Delete', variation_path(variation), method: :delete , class:'fl ml10'
-      = link_to 'View', @experiment.url + "?forceversion=#{(total_percent-1)}", target: '_blank', class: 'ml10'
+      = link_to 'View', @experiment.url + "?forceversion=#{(total_percent-1)}&seedrafts=true", target: '_blank', class: 'ml10'
 div class='fr fs12 mr20 mt20'
   = 100 - total_percent
   | % -&nbsp;

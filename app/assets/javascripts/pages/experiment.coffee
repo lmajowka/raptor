@@ -28,4 +28,4 @@ class Raptor.Pages.Experiment
     $('iframe')[0].src = @iframeURL percent
 
   @iframeURL: (percent) ->
-    $('iframe')[0].src.replace(/\=([0-9]+)/g,"=#{(percent - 1)}")
+    $('iframe')[0].src.replace(/\=([0-9]+)/g,"=#{(percent - 1)}") + "&seedrafts=true"
