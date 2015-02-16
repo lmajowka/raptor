@@ -30,19 +30,19 @@ Which means you can use Raptor ABtests in your application regardless of your se
 
         Rails, database no mystery
 
-4. Checking in development:
+4. Testing in development:
 
    In your website's head, place the tag
 
         <script src="http://localhost:3000/js.js"></script>
 
-   The tests should start running
+   The tests should start running if the file is properly loaded
 
 ## Playing on production
 
 1. Deploy your raptor application to a server ( I recommend heroku, it's a good place to start )
 
-2. in your website's head, use the tag with you raptor's app domain
+2. In your website's head, use the tag with you raptor's app domain
 
         <script src="http://yourraptorappdomain.com/js.js"></script>
 
