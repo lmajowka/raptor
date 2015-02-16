@@ -9,7 +9,13 @@ class VariationsController < InheritedResources::Base
   end
 
   def create
-    create!{back_to_experiment and return}
+    create!{
+      unless @variation.errors.any?
+        back_to_experiment and return
+      else
+        render 'new' and return
+      end
+    }
   end
 
   def update

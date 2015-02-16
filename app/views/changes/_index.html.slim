@@ -2,6 +2,8 @@ div class='ml20 mt20 fs12'
   -@experiment.variations.each do |variation|
     - variation.changes.each do |change|
       div class="change-of-variation change-of-variation-#{{variation.id}} mt10"
+        div class='fr mr20 cp red'
+          = link_to 'x' , change_path(change), method: :delete, class: 'red'
         b
           = change.selector
         - if change.content.size > 0
