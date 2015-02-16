@@ -38,6 +38,10 @@ Which means you can use Raptor ABtests in your application regardless of your se
 
    The tests should start running if the file is properly loaded
 
+5. Access root ( http://localhost:3000/ ) with (user: testuser, password: testpass )
+
+        Define experiments and variations, play with the dashboard is pretty straight forward ( I hope :) )
+
 ## Playing on production
 
 1. Deploy your raptor application to a server ( I recommend heroku, it's a good place to start )
