@@ -14,7 +14,6 @@ class Raptor.Lib.Runner
     $.each @activeExperiments(), (key, experiment) =>
       $.each @relevantVariationsForPopulation(experiment) , (key,variation) =>
         $.each variation.changes, (key,change) =>
-          clearInterval(@timer[change.selector+"Default"])
           @timer[change.selector] = setInterval @applyChange change, 200
     setTimeout ( => @timeOut() ) , 12000
 

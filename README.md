@@ -1,4 +1,4 @@
-# Raptor
+# Raptor A/B Tests v0.101
 
 [![Code Climate](https://codeclimate.com/github/lmajowka/raptor/badges/gpa.svg)](https://codeclimate.com/github/lmajowka/raptor)
 
@@ -54,3 +54,9 @@ Which means you can use Raptor ABtests in your application regardless of your se
 
 ## Collecting Data
         Coming up
+
+## Roadmap
+
+        - Data collection with Google Analytics or custom
+        - Experiments / country
+        - Javascript rules to evaluate before applying a variation
