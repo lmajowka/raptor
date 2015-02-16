@@ -20,7 +20,7 @@ Which means you can use Raptor ABtests in your application regardless of your se
 
    Play with experiments and versions
 
-3  Requirements:
+3.  Requirements:
 
    Client side:
 
@@ -48,11 +48,20 @@ Which means you can use Raptor ABtests in your application regardless of your se
 
 3. Use the parameters  seedrafts and forceVersion to check that the experiment is well configured
 
-        http://yourraptorappdomain.com/my-landing-page?seedrafts&forceversion=6
+        http://appdomain.com/my-landing-page?seedrafts&forceversion=6
 
 4. Change or experiment status to "published" and set up and end time. (Published until)
 
+## Contributing
+
+1. Fork it!
+2. Create your feature branch: `git checkout -b my-new-feature`
+3. Commit your changes: `git commit -m 'Add some feature'`
+4. Push to the branch: `git push origin my-new-feature`
+5. Submit a pull request :D
+
 ## Collecting Data
+
         Coming up
 
 ## Roadmap
@@ -60,3 +69,7 @@ Which means you can use Raptor ABtests in your application regardless of your se
         - Data collection with Google Analytics or custom
         - Experiments / country
         - Javascript rules to evaluate before applying a variation
+
+## License
+
+[BSD License](https://github.com/lmajowka/raptor/blob/master/LICENSE) © 2015 - Leonardo Majowka
