@@ -34,10 +34,14 @@ class VariationsController < InheritedResources::Base
 
   def get_population_logic
     return unless params[:variation][:population_logic] and params[:variation][:experiment_id]
-    return params[:variation][:population_logic] = "100-100" if params[:variation][:population_logic] == "0"
+    return params[:variation][:population_logic] = population_logic
+  end
+
+  def population_logic
+    return "100-100" if params[:variation][:population_logic] == "0"
     ranges = Variation.get_ranges_for(params[:variation][:experiment_id],params[:id])
     first_range = max_range(ranges) + 1
-    params[:variation][:population_logic] = "#{first_range}-#{first_range+params[:variation][:population_logic].to_i - 1}"
+    "#{first_range}-#{first_range+params[:variation][:population_logic].to_i - 1}"
   end
 
   def max_range(ranges)
