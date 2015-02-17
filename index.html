@@ -33,8 +33,8 @@
 
 <p><a href="https://codeclimate.com/github/lmajowka/raptor"><img src="https://codeclimate.com/github/lmajowka/raptor/badges/gpa.svg" alt="Code Climate"></a></p>
 
-<p>Raptor is an ABTest management system written in Ruby on Rails that generates a javascript file responsible for running the tests.
-Which means you can use Raptor ABtests in your application regardless of your server side configuration and even if your whole page is delivered by a CDN</p>
+<p>Raptor is an A/B Tests management tool written in Ruby on Rails that generates a javascript file responsible for running the tests.
+This means you can use Raptor A/B Tests in your application regardless of your server side configuration and even if your whole page is delivered by a CDN</p>
 
 <h2>
 <a id="getting-started" class="anchor" href="#getting-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Getting Started</h2>
@@ -72,14 +72,20 @@ rails server
 </code></pre>
 </li>
 <li>
-<p>Checking in development:</p>
+<p>Testing in development:</p>
 
 <p>In your website's head, place the tag</p>
 
 <pre><code>&lt;script src="http://localhost:3000/js.js"&gt;&lt;/script&gt;
 </code></pre>
 
-<p>The tests should start running</p>
+<p>The tests should start running if the file is properly loaded</p>
+</li>
+<li>
+<p>Access root ( http://localhost:3000/ ) with (user: testuser, password: testpass )</p>
+
+<pre><code>Define experiments and variations, play with the dashboard is pretty straight forward ( I hope :) )
+</code></pre>
 </li>
 </ol>
 
@@ -88,8 +94,15 @@ rails server
 
 <ol>
 <li><p>Deploy your raptor application to a server ( I recommend heroku, it's a good place to start )</p></li>
+<li><p>Run migrations</p></li>
 <li>
-<p>in your website's head, use the tag with you raptor's app domain</p>
+<p>Set up ENV vars</p>
+
+<pre><code>   $ heroku config:set HTTP_USER=username HTTP_PASS=password
+</code></pre>
+</li>
+<li>
+<p>In your website's head, use the tag with you raptor's app domain</p>
 
 <pre><code>&lt;script src="http://yourraptorappdomain.com/js.js"&gt;&lt;/script&gt;
 </code></pre>
@@ -100,7 +113,7 @@ rails server
 <pre><code>http://appdomain.com/my-landing-page?seedrafts&amp;forceversion=6
 </code></pre>
 </li>
-<li><p>Change or experiment status to "published" and set up and end time. (Published until)</p></li>
+<li><p>Change your experiment status to "published" and set up and end time. (Published until)</p></li>
 </ol>
 
 <h2>
